@@ -126,7 +126,10 @@ section.hero {
 
     & img[src*="stars-1"] {
       max-width: 5.5rem;
-      top: 30%;
+      --slide-top: 20%;
+      /* top: 30%; */
+      top: var(--slide-top);
+      left: 4%;
       z-index: 0;
 
       opacity: 0;
@@ -136,8 +139,9 @@ section.hero {
 
     & img[src*="stars-2"] {
       max-width: 2.5rem;
-      right: 0;
-      bottom: 35%;
+      --slide-bottom: 45%;
+      right: -1%;
+      bottom: var(--slide-bottom);
 
       transform: translateX(400%);
       animation: slideIn 2.2s 800ms ease both;
@@ -161,6 +165,18 @@ section.hero {
     & .buttons {
       flex-direction: row;
       align-items: flex-start;
+    }
+
+    & > div:nth-child(2) {
+      & img[src*="stars-1"] {
+        --slide-top: 30%;
+        left: 0;
+      }
+
+      & img[src*="stars-2"] {
+        right: 0;
+        --slide-bottom: 30%;
+      }
     }
   }
 }

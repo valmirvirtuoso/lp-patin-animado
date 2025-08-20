@@ -9,7 +9,12 @@ section.gallery {
   }
 
   & header span {
+    --text-sm: 0.75rem;
     font: 500 var(--text-sm) / 1.5 var(--ff-base);
+  }
+
+  & header h2 {
+    --text-lg: 1.5rem;
   }
 
   & img {
@@ -21,9 +26,11 @@ section.gallery {
     margin-top: 2rem;
     display: grid;
     grid-template-areas:
-      "A B B"
-      "C C D";
-    gap: 2.5rem;
+      "A"
+      "B"
+      "C"
+      "D";
+    gap: 1.5rem;
   }
 
   & figure {
@@ -95,6 +102,23 @@ section.gallery {
         aspect-ratio: 1/1;
         border-radius: 50%;
       }
+    }
+  }
+
+  @media (width >= 80rem) {
+    & header span {
+      --text-sm: 0.875rem;
+    }
+
+    & header h2 {
+      --text-lg: 2.5rem;
+    }
+
+    & .content {
+      grid-template-areas:
+        "A B B"
+        "C C D";
+      gap: 2rem;
     }
   }
 }
